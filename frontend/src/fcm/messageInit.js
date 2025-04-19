@@ -1,7 +1,7 @@
 import { getMessaging, getToken } from "firebase/messaging";
 import firebaseapp from "./appInit";
 
-const key = import.meta.env.VAPID_KEY;
+const key = import.meta.env.VITE_VAPID_KEY;
 
 const messaging = getMessaging(firebaseapp);
 

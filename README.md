@@ -30,7 +30,7 @@ cd web-notification-system
 
 #### b. Configure the Frontend
 - In **Project Settings → General**, register a new web app.
-- Copy the configuration object and add it to `frontend/src/utils/firebase-config.js`:
+- Copy the configuration object and add it to `frontend/src/utils/firebase-config.js` and `frontend/public/firebase-messaging-sw.js`:
 
 ```js
 const firebaseConfig = {
@@ -61,7 +61,7 @@ This ensures the VAPID key is securely loaded from the `.env` file.
 
 #### c. Configure the Backend and Worker
 - In **Project Settings → Service Accounts**, generate a new private key and download the JSON credentials file.
-- Save the file as `firebase-credentials.json` in `backend/config/`.
+- Replace all the .env variables in your .env file according to the values in your `backend/firebase-credentials.json`.
 
 ---
 
