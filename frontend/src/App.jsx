@@ -12,7 +12,7 @@ function App() {
       <div className=' flex justify-center items-center h-screen'>
           <button className='bg-black shadow-xl text-white  text-xl px-4 py-2 rounded-full cursor-pointer hover:scale-105'
           onClick={()=>{
-            const url = 'http://localhost:8000';
+            const url = import.meta.env.VITE_SERVER_URL;
             const currenttoken = localStorage.getItem("fcm_token");
             axios.post(`${url}/devices/register`, {
               "fcm_token" :  currenttoken,

@@ -36,3 +36,10 @@ def register_device(payload: TokenModel):
 def publish_notification(notification: Notification):
     send_to_queue("notification_queue", notification.model_dump())
     return {"message": "Notification sent to queue"}
+
+if __name__ == "__main__":
+    import uvicorn
+    import os
+
+    port = int(os.environ.get("PORT", 8000))
+    uvicorn.run("main:app", host="0.0.0.0", port=port, reload=True)
